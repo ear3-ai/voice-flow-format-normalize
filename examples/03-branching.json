@@ -1,0 +1,45 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "name": "Branching food preferences",
+    "preamble": "You are a food researcher. Branch the conversation based on the user's preference.",
+    "language": "en",
+    "sections": [
+      { "id": "SID1", "name": "Preference", "order": 1 },
+      { "id": "SID2", "name": "Pizza branch", "order": 2 },
+      { "id": "SID3", "name": "Sushi branch", "order": 3 }
+    ]
+  },
+  "steps": [
+    {
+      "id": "Q1",
+      "type": "multiple_choice_single",
+      "text": "What kind of food do you prefer?",
+      "required": true,
+      "order": 1,
+      "sectionId": "SID1",
+      "choices": [
+        { "id": "C1", "display": "Pizza", "order": 1, "transitionTo": "SID2" },
+        { "id": "C2", "display": "Sushi", "order": 2, "transitionTo": "SID3" }
+      ]
+    },
+    {
+      "id": "Q2",
+      "type": "voice_input_single",
+      "text": "Which toppings do you like?",
+      "required": true,
+      "order": 2,
+      "sectionId": "SID2",
+      "next": "__end__"
+    },
+    {
+      "id": "Q3",
+      "type": "voice_input_single",
+      "text": "Which rolls do you prefer?",
+      "required": true,
+      "order": 3,
+      "sectionId": "SID3",
+      "next": "__end__"
+    }
+  ]
+}

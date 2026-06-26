@@ -1,0 +1,51 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "name": "Sectioned research interview",
+    "preamble": "You are conducting a research interview. Keep the tone warm and curious.",
+    "language": "en",
+    "sections": [
+      { "id": "SID1", "name": "Background", "order": 1 },
+      { "id": "SID2", "name": "Workflow", "order": 2 },
+      { "id": "SID3", "name": "Wrap-up", "order": 3 }
+    ]
+  },
+  "steps": [
+    {
+      "id": "Q1",
+      "type": "voice_input_single",
+      "text": "Tell me a bit about your role.",
+      "required": true,
+      "order": 1,
+      "sectionId": "SID1",
+      "next": "SID2"
+    },
+    {
+      "id": "Q2",
+      "type": "voice_input_multiline",
+      "text": "Describe a typical day at work.",
+      "required": true,
+      "order": 2,
+      "sectionId": "SID2",
+      "next": "__continue__"
+    },
+    {
+      "id": "Q3",
+      "type": "voice_input_single",
+      "text": "Which tools do you use most?",
+      "required": true,
+      "order": 3,
+      "sectionId": "SID2",
+      "next": "SID3"
+    },
+    {
+      "id": "Q4",
+      "type": "voice_input_single",
+      "text": "Anything else you'd like to share?",
+      "required": false,
+      "order": 4,
+      "sectionId": "SID3",
+      "next": "__end__"
+    }
+  ]
+}

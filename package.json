@@ -1,0 +1,70 @@
+{
+  "name": "@ear3/voice-flow-schema",
+  "version": "0.1.0",
+  "description": "Portable JSON schema for voice AI conversation flows. Define a flow once, compile to Pipecat RTVI (and other voice frameworks).",
+  "keywords": [
+    "voice-ai",
+    "pipecat",
+    "rtvi",
+    "conversation-flow",
+    "voice-agent",
+    "schema",
+    "survey",
+    "interview"
+  ],
+  "license": "MIT",
+  "author": "Ear3 <support@ear3.ai>",
+  "homepage": "https://github.com/ear3-ai/voice-flow-schema",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ear3-ai/voice-flow-schema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ear3-ai/voice-flow-schema/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./pipecat-rtvi": {
+      "types": "./dist/converters/to-pipecat-rtvi.d.ts",
+      "import": "./dist/converters/to-pipecat-rtvi.js",
+      "default": "./dist/converters/to-pipecat-rtvi.js"
+    },
+    "./schema.json": "./schema/voice-flow.schema.json"
+  },
+  "files": [
+    "dist",
+    "schema",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "schema:generate": "tsx scripts/generate-schema.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0",
+    "zod-to-json-schema": "^3.22.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

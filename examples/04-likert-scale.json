@@ -1,0 +1,38 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "name": "NPS-style satisfaction check",
+    "preamble": "You are collecting a quick satisfaction rating. Read each prompt and capture a numeric answer.",
+    "language": "en"
+  },
+  "steps": [
+    {
+      "id": "Q1",
+      "type": "likert_scale",
+      "text": "How likely are you to recommend us to a friend?",
+      "required": true,
+      "order": 1,
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "minLabel": "Not at all likely",
+        "maxLabel": "Extremely likely"
+      }
+    },
+    {
+      "id": "Q2",
+      "type": "rating_scale",
+      "text": "Rate the quality of your last session.",
+      "required": true,
+      "order": 2,
+      "scale": { "min": 1, "max": 5 }
+    },
+    {
+      "id": "Q3",
+      "type": "voice_input_multiline",
+      "text": "What's the main reason for your scores?",
+      "required": false,
+      "order": 3
+    }
+  ]
+}

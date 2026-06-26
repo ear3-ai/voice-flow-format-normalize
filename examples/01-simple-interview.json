@@ -1,0 +1,34 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "name": "Simple onboarding interview",
+    "description": "Three open questions, linear flow.",
+    "preamble": "You are a friendly product researcher. Ask each question, give the user space to answer, then move on.",
+    "language": "en",
+    "customStartMessage": "Hi! I have a few short questions about how you use our product. Ready?",
+    "customEndMessage": "Thank you — that's all from me. Have a great day!"
+  },
+  "steps": [
+    {
+      "id": "Q1",
+      "type": "voice_input_single",
+      "text": "What problem were you trying to solve when you signed up?",
+      "required": true,
+      "order": 1
+    },
+    {
+      "id": "Q2",
+      "type": "voice_input_multiline",
+      "text": "Walk me through the last time you used the product. What were you doing?",
+      "required": true,
+      "order": 2
+    },
+    {
+      "id": "Q3",
+      "type": "voice_input_single",
+      "text": "If you could change one thing about it, what would it be?",
+      "required": false,
+      "order": 3
+    }
+  ]
+}

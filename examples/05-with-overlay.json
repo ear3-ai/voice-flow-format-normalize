@@ -1,0 +1,44 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "name": "Concept-test with on-screen overlay",
+    "preamble": "You are running a concept test. When discussing the pricing tiers, point the user to the items shown on screen.",
+    "language": "en"
+  },
+  "steps": [
+    {
+      "id": "TIERS",
+      "type": "display_list",
+      "text": "Pricing tiers",
+      "required": false,
+      "order": 1,
+      "choices": [
+        { "id": "T1", "display": "Free — for hobbyists", "order": 1 },
+        { "id": "T2", "display": "Pro — $19/month", "order": 2 },
+        { "id": "T3", "display": "Team — $49/seat", "order": 3 }
+      ],
+      "overlayImageUrl": "https://example.com/tiers.png"
+    },
+    {
+      "id": "Q1",
+      "type": "multiple_choice_single",
+      "text": "Looking at the tiers on screen, which fits you best?",
+      "required": true,
+      "order": 2,
+      "attachedOverlayId": "TIERS",
+      "choices": [
+        { "id": "C1", "display": "Free", "order": 1 },
+        { "id": "C2", "display": "Pro", "order": 2 },
+        { "id": "C3", "display": "Team", "order": 3 }
+      ]
+    },
+    {
+      "id": "Q2",
+      "type": "voice_input_multiline",
+      "text": "Tell me a bit about why you picked that tier.",
+      "required": true,
+      "order": 3,
+      "next": "__end__"
+    }
+  ]
+}
